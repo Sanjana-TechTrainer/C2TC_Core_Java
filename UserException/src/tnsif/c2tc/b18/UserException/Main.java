@@ -1,3 +1,8 @@
+/*
+ * 1st July
+ * User defined Exception Handling example
+ *
+ */
 package tnsif.c2tc.b18.UserException;
 import java.util.Scanner;
 

@@ -1,3 +1,8 @@
+/*
+ * 29th June
+ * JDBC without any structure
+ *
+ */ 
 import java.sql.*;
 import java.util.Scanner;
 public class Main {

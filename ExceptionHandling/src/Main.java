@@ -1,4 +1,8 @@
-
+/*
+ * 1st July
+ * Exception Handling example showing try and multiple catch
+ *
+ */
 import java.util.*;
 
 public class Main{  
