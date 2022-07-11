@@ -1,24 +1,28 @@
+/*
+ * 29th and 30th June
+ * JDBC with structure and Maven
+ *
+ */
 package tnsif.c2tc.b6;
 
 import java.sql.*;
 import java.util.List;
 import java.util.Scanner;
 
-import tnsif.c2tc.b6.Services.StudentServices;
+import tnsif.c2tc.b6.Services.StudentService;
+import tnsif.c2tc.b6.Services.StudentServicesImpl;
 import tnsif.c2tc.b6.entities.Student;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		StudentServices service=new StudentServices();
-		Student student=new Student();
+		StudentService service=new StudentServicesImpl();
 		Scanner sc=new Scanner(System.in);
 		
 		// Retrieve a particular student
 		try
-		{
-			student.setUid(sc.nextInt());
-			Student student1= service.GetStudent(student.getUid());
-			System.out.println(student1);
+		{	
+			Student student= service.GetStudent(sc.nextInt());
+			System.out.println(student);
 		}
 		catch (Exception e) {
 			System.out.println("Details not found");
@@ -32,8 +36,8 @@ public class Main {
 			System.out.println(s);
 		
 		// Delete a student
-		student.setUid(sc.nextInt());
-		boolean success = service.DeleteStudent(student.getUid());
+
+		boolean success = service.DeleteStudent(sc.nextInt());
 		if(success)
 			System.out.println("Student was deleted sucessfully");
 		else
@@ -41,6 +45,7 @@ public class Main {
 		
 		// Insert a student
 		
+		Student student=new Student();
 		student.setUid(sc.nextInt());
 		student.setName(sc.next());
 		if(service.AddStudent(student))
